@@ -7,10 +7,3 @@ export interface Movie {
   vote_average: number;
   release_date: string;
 }
-
-export interface MovieSearchResponse {
-  results: Movie[];
-  page: number;
-  total_pages: number;
-  total_results: number;
-}

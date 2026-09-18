@@ -1,9 +1,15 @@
 import axios from "axios";
-import type { MovieSearchResponse } from "../types/movie";
+import type { Movie } from "../types/movie"; // Імпортуємо тільки сам Movie
+
+// Інтерфейс відповіді тепер живе тут, як і вимагав ментор
+export interface MovieSearchResponse {
+  results: Movie[];
+  page: number;
+  total_pages: number;
+  total_results: number;
+}
 
 const TOKEN = import.meta.env.VITE_TMDB_TOKEN;
-
-console.log("VITE_TMDB_TOKEN exists:", Boolean(TOKEN));
 
 const apiClient = axios.create({
   baseURL: "https://api.themoviedb.org/3",
